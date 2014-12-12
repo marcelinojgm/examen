@@ -41,7 +41,7 @@ public class Alimento
         System.out.println("Proteinas por cada 100 gramos:     " + this.gramosProteínas);
         System.out.println("Carbohidratos por cada 100 gramos: " + this.gramosCarbohidratos);
         System.out.println("Grasas por cada 100 gramos:        " + this.gramosGrasas);
-        System.out.println("Calorias:                          " + calorias100Gramos());
+        System.out.println("Calorias:                          " + getCalorias100Gramos());
         System.out.println("Componente/s mayoritario/s:        " + componenteMayor());
 
     }
@@ -49,13 +49,38 @@ public class Alimento
     /**
      * retorna el numero de calorias por cada 100 gramos de producto
      */
-    private float calorias100Gramos()
+    public float getCalorias100Gramos()
     {
-        return  this.gramosProteínas * 4 + 
-        this.gramosCarbohidratos * 4 + 
-        this.gramosGrasas * 9;
+        return  (this.gramosProteínas * 4) + 
+                (this.gramosCarbohidratos * 4) + 
+                (this.gramosGrasas * 9);
     }
 
+    /**
+     * retorna la cantidad de proteinas
+     */
+    public float getProteinas()
+    {
+        return this.gramosProteínas;
+    }
+    
+    /**
+     * retorna la cantidad de hidratosdecarbono
+     */
+    public float getCarbohidratos()
+    {
+        return this.gramosCarbohidratos;
+    }
+    
+      /**
+     * retorna la cantidad de grasas
+     */
+    public float getGrasas()
+    {
+        return this.gramosGrasas ;
+    }
+    
+    
     /**
      * retorna cadena de caracteres con macronutriente con mayor cantidad en el producto 
      */
