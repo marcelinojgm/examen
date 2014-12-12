@@ -40,15 +40,28 @@ public class Usuario
     /**
      * retorna estadisticas sobre la ingesta que ha hecho el usuario
      */
-    public void ingesta()
+    public void imprimeEstadistica()
     {
-        System.out.println("Nombre:                            " + this.nombre);
+       System.out.println("Nombre:                            " + this.nombre);
         System.out.println("Gramos de proteinas ingeridos:     " + this.proteinas);
         System.out.println("Gramos de carbohidratos ingeridos: " + this.carbohidratos);
         System.out.println("Gramos de grasas ingeridos:        " + this.grasas);
         System.out.println("Calorias ingeridas:                " + this.calorias);
     }
-    
+    /**
+     * retorna estadisticas sobre la ingesta enporcentaje
+     */
+    public void imprimeEstadisticaPorcentaje()
+    {
+        float total = this.proteinas +this.carbohidratos +this.grasas;
+          System.out.println("Nombre:                            " + this.nombre);
+        System.out.println("Gramos de proteinas ingeridos:     " + this.proteinas       + "  " + (this.proteinas/total) + "%");
+        System.out.println("Gramos de carbohidratos ingeridos: " + this.carbohidratos   + "  " + (this.proteinas/total) + "%");
+        System.out.println("Gramos de grasas ingeridos:        " + this.grasas          + "  " + (this.proteinas/total) + "%");
+        System.out.println("Calorias ingeridas:                " + this.calorias);
+        
+       
+    }
    
    
     
