@@ -15,6 +15,9 @@ public class Usuario
     private float carbohidratos;
     private float grasas;
 
+    //aliemnto mas calorico consumido hasta la fecha
+    private Alimento masCalorico;
+
     //calorias ingeridas
     private float calorias;
     /**
@@ -23,6 +26,10 @@ public class Usuario
     public Usuario( String nombre)
     {
         this.nombre   = nombre;
+        this.proteinas = 0;
+        this.carbohidratos = 0;
+        this.grasas = 0;
+        this.masCalorico = null;
     }
 
     /**
@@ -34,7 +41,17 @@ public class Usuario
         this.carbohidratos = this.carbohidratos +(cantidad * alimento.getCarbohidratos()/100 );
         this.grasas        = this.grasas        +(cantidad * alimento.getGrasas()/100 );
         this.calorias      = this.calorias      +(cantidad * alimento.getCalorias100Gramos()/100 );
-
+        if (masCalorico != null )
+        {
+            if (masCalorico.getCalorias100Gramos() < alimento.getCalorias100Gramos())
+            {
+                    masCalorico = alimento;
+            }
+        }
+        else
+        {
+            masCalorico = alimento;
+        }
     }
 
     /**
@@ -70,7 +87,7 @@ public class Usuario
     {
         return this.calorias;
     }
-    
+
     /**
      * retorna nombre usuario
      */
@@ -78,7 +95,7 @@ public class Usuario
     {
         return this.nombre;
     }
-    
+
     /**
      * realiza una comparativa de ingesta de calorias e imprime un mensaje indicando quien tiene un mayor consumo de calorias
      */
@@ -89,6 +106,16 @@ public class Usuario
         {
             compara = "menos";
         }
-         System.out.println(this.nombre + " ha consumido " + compara + " calorias que " + usuario.getNombre());
+        System.out.println(this.nombre + " ha consumido " + compara + " calorias que " + usuario.getNombre());
     }
+    /**
+     * imprime por pantalla el alimento mas calorico hasta el momento
+     *
+     */
+    public void imprimeMasCalorico()
+    {
+           System.out.println("alimento mas calorico ingerido por el momento: " + masCalorico.getNombre());
+    }
+    
+    
 }

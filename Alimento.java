@@ -57,6 +57,14 @@ public class Alimento
     }
 
     /**
+     * retorna elnombre
+     */
+    public String getNombre()
+    {
+        return this.nombre;
+    }
+    
+    /**
      * retorna la cantidad de proteinas
      */
     public float getProteinas()
