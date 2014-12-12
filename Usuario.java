@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 /**
  * Clase que simula un usuario.
  * 
@@ -17,7 +17,8 @@ public class Usuario
 
     //aliemnto mas calorico consumido hasta la fecha
     private Alimento masCalorico;
-
+    //coleccion donde se aguardaria cada la info de cada alimento consumido
+    private ArrayList<String> alimentos;
     //calorias ingeridas
     private float calorias;
     /**
